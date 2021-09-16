@@ -1,0 +1,23 @@
+
+<div class="wrapper">  
+        <div class="container-fluid">
+            <div class="button-wrap">
+                <button (click)="startPage=0; lastPage=100;">{{"First"}}</button>
+                <button [disabled]="startPage == 0" (click)="goBack()">{{"<< Back"}}</button>
+                <button [disabled]="lastPage == apiResponse.length" (click)="goNext()">{{"Next >>"}}</button>  
+                <button (click)="startPage=apiResponse.length - 100; lastPage=apiResponse.length">{{"Last"}}</button>
+                {{"Page: " + (startPage / 100).toFixed(0)}}
+                <button (click)="SortMe()">{{ByID? 'Sort by: Title' :'Sort by: AlbumId'}}</button>
+                
+            </div>
+            <ul id="list" >
+                <li *ngFor="let image of apiResponse.slice(startPage, lastPage) | orderBy: ByID? 'AlbumId' :'title' ">
+                    <button class="delete-button" (click)="delete(image.id)">{{image.id + ": delete"}}</button>
+                    <a [routerLink]="['/image', image.id]" >          
+                        <img src="{{image.thumbnailUrl}}" class="tn" width="200" >
+                    </a>
+                    <p>{{image.title}}</p>
+                </li>
+            </ul>
+        </div>
+</div>

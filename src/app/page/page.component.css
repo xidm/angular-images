@@ -1,0 +1,58 @@
+
+ul { padding: 0; }
+li { display: inline-block; margin: auto; }
+
+.tn {
+    margin: 15px;
+
+}
+
+.button-wrap{
+    margin: 15px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.gallery {
+    -webkit-background-list: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: civer;
+}
+
+
+#list > li{
+    position: relative;
+}
+.delete-button{
+    position: absolute;
+    width: 50px;height: 50px;
+    right: 15px; top:15px;
+    
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+p {
+    margin: 0px 15px;
+    display: flex;
+    width: 200px;
+    text-align: center;
+    
+}
+
+.container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
